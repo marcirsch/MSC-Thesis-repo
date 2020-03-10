@@ -1,0 +1,2 @@
+cartographer:cartographer_ros/cartographer_ros:cartographer_ros/cartographer_ros_msgs:cartographer_ros/cartographer_rviz:ceres-solver:learning_tf:robot_pose_publisher:slam_gazebo
+-G Ninja -DCATKIN_DEVEL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated

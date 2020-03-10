@@ -1,0 +1,14 @@
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/_setup_util.py
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/env.sh
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/setup.bash
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/local_setup.bash
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/setup.sh
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/local_setup.sh
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/setup.zsh
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/local_setup.zsh
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/.rosinstall
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib/pkgconfig/robot_pose_publisher.pc
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/share/robot_pose_publisher/cmake/robot_pose_publisherConfig.cmake
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/share/robot_pose_publisher/cmake/robot_pose_publisherConfig-version.cmake
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/share/robot_pose_publisher/package.xml
+/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib/robot_pose_publisher/robot_pose_publisher

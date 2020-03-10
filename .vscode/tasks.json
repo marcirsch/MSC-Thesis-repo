@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build catkin workspace",
+            "type": "shell",
+            "command": "catkin_make_isolated",
+            "args": [
+                "-C",
+                "${workspaceFolder}/simulation/catkin_ws",
+                "--install",
+                "--use-ninja"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build px4 Firmware",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C",
+                "${workspaceFolder}/simulation/Firmware",
+                "px4_sitl_default",
+                "gazebo",
+                "DONT_RUN=1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

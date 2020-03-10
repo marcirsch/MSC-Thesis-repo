@@ -1,0 +1,8 @@
+prefix=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated
+
+Name: slam_gazebo
+Description: Description of slam_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
