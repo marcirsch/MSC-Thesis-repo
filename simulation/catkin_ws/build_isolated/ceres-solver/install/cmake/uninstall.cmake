@@ -61,7 +61,7 @@ foreach (INSTALLED_FILE ${INSTALL_MANIFEST})
 
   message(STATUS "Uninstalling \"$ENV{DESTDIR}${INSTALLED_FILE}\"")
   if (EXISTS "$ENV{DESTDIR}${INSTALLED_FILE}")
-    execute_process(COMMAND /usr/local/bin/cmake
+    execute_process(COMMAND /usr/bin/cmake
                     -E remove "$ENV{DESTDIR}${INSTALLED_FILE}"
                     OUTPUT_VARIABLE RM_OUT
                     RESULT_VARIABLE RM_RETVAL)
@@ -79,7 +79,7 @@ if (CERES_INCLUDE_INSTALL_ROOT AND
     EXISTS ${CERES_INCLUDE_INSTALL_ROOT})
   message(STATUS "Removing Ceres include install directory: "
                  "\"$ENV{DESTDIR}${CERES_INCLUDE_INSTALL_ROOT}\"")
-  execute_process(COMMAND /usr/local/bin/cmake
+  execute_process(COMMAND /usr/bin/cmake
                   -E remove_directory
                   "$ENV{DESTDIR}${CERES_INCLUDE_INSTALL_ROOT}"
                   OUTPUT_VARIABLE RM_OUT

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# @name 3DR Iris Quadrotor with vl53l1x lidars
+#
+# @type Quadrotor Wide
+#
+
+sh /etc/init.d-posix/10016_iris
+
+if [ $AUTOCNF = yes ]
+then
+	param set LPE_FUSION 242
+fi

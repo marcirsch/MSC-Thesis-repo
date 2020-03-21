@@ -1,0 +1,8 @@
+prefix=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/gazebo_dev
+
+Name: gazebo_dev
+Description: Description of gazebo_dev
+Version: 2.8.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

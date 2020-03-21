@@ -1,0 +1,2 @@
+
+-G Ninja -DCATKIN_DEVEL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/slam_gazebo/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/slam_gazebo/install_isolated

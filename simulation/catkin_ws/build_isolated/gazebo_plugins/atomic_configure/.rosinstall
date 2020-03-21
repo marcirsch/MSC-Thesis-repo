@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/gazebo_plugins/setup.sh

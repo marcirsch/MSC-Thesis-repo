@@ -458,11 +458,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cartographer/common" TYPE FILE FILES "/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer/cartographer/common/lua_parameter_dictionary_test_helpers.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cartographer/io" TYPE FILE FILES "/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer/cartographer/io/fake_file_writer.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cartographer/io" TYPE FILE FILES "/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer/cartographer/io/fake_file_writer.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cartographer/common" TYPE FILE FILES "/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer/cartographer/common/lua_parameter_dictionary_test_helpers.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
