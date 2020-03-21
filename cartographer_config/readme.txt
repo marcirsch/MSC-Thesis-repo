@@ -1,1 +1,0 @@
-Place launch and lua file in catkin_ws/install_isolated/cartographer_ros/launch and configuration.
