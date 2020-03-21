@@ -15,29 +15,31 @@
 -->
 
 <launch>
-
   <param name="/use_sim_time" value="true" />
 
-  <param name="robot_description"
-    textfile="../Firmware/Tools/sitl_gazebo/models/iris/iris.sdf" />
+  <!-- Registers robot descriptor used for building tf tree -->
+  <!-- <param name="robot_description"
+    textfile="$(find cartographer_ros)/urdf/iris_base.urdf" /> -->
+  <!-- Published states from robot descriptor -->
+  <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="30.0" />
+  </node> -->
+  <!-- Publishes joint states based on the robot descriptor -->
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 
-
-  <node name="rviz" pkg="rviz" type="rviz" required="true"
-      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
-
-  <node name="robot_state_publisher" pkg="robot_state_publisher"
-    type="robot_state_publisher" />
+  <!-- Relay imu data from mavros topic to /imu that cartographer expects -->
+  <node pkg="topic_tools" type="relay" name="imu_relay" args="mavros/imu/data imu" />
 
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_ros)/configuration_files
-          -configuration_basename backpack_2d.lua"
+          -configuration_basename vl53l1x_3d.lua"
       output="screen">
-
-    <remap from="/mavros/imu/data" to="/imu" />
-    <remap from="/laser/front/scan" to="/points2" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
       type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_3d.rviz" />
 </launch>

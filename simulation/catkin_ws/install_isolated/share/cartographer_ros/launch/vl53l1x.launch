@@ -18,14 +18,14 @@
   <param name="/use_sim_time" value="true" />
 
   <!-- Registers robot descriptor used for building tf tree -->
-  <param name="robot_description"
-    textfile="$(find cartographer_ros)/urdf/iris_base.urdf" />
+  <!-- <param name="robot_description"
+    textfile="$(find cartographer_ros)/urdf/iris_base.urdf" /> -->
   <!-- Published states from robot descriptor -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+  <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
         <param name="publish_frequency" type="double" value="30.0" />
-  </node>
+  </node> -->
   <!-- Publishes joint states based on the robot descriptor -->
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 
   <!-- Relay imu data from mavros topic to /imu that cartographer expects -->
   <node pkg="topic_tools" type="relay" name="imu_relay" args="mavros/imu/data imu" />

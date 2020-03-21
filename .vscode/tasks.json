@@ -34,6 +34,31 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Copy px4 firmware editor files",
+            "type": "shell",
+            "command": "${workspaceFolder}/simulation/scripts/copy_firmware_files.sh",
+            "args": [
+                "${workspaceFolder}/simulation"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Copy cartographer editor files",
+            "type": "shell",
+            "command": "${workspaceFolder}/simulation/scripts/copy_cartographer_files.sh",
+            "args": [
+                "${workspaceFolder}/simulation/cartographer_files",
+                "${workspaceFolder}/simulation/catkin_ws/install_isolated/share/cartographer_ros"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

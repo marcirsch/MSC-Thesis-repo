@@ -54,7 +54,7 @@
           </ray>
           <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_block_laser.so">
             <topicName>laser/bottom/scan</topicName>
-            <frameName>base_link</frameName>
+            <frameName>laser_bottom_link</frameName>
             <gaussianNoise>0.00</gaussianNoise>
             <alwaysOn>true</alwaysOn>
             <updateRate>100</updateRate>
@@ -94,7 +94,7 @@
           </ray>
           <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_block_laser.so">
             <topicName>laser/top/scan</topicName>
-            <frameName>base_link</frameName>
+            <frameName>laser_top_link</frameName>
             <gaussianNoise>0.00</gaussianNoise>
             <alwaysOn>true</alwaysOn>
             <updateRate>100</updateRate>

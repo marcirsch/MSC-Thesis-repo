@@ -5,9 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Submaps1
-        - /PointCloud23
-        - /PointCloud23/Autocompute Value Bounds1
+        - /PointCloud21/Autocompute Value Bounds1
       Splitter Ratio: 0.6006709933280945
     Tree Height: 672
   - Class: rviz/Selection
@@ -63,9 +61,11 @@ Visualization Manager:
           Value: true
         base_link_frd:
           Value: true
-        base_link_inertia:
-          Value: true
         imu_link:
+          Value: true
+        laser_bottom_link:
+          Value: true
+        laser_top_link:
           Value: true
         map:
           Value: true
@@ -74,16 +74,6 @@ Visualization Manager:
         odom:
           Value: true
         odom_ned:
-          Value: true
-        rotor_0:
-          Value: true
-        rotor_1:
-          Value: true
-        rotor_2:
-          Value: true
-        rotor_3:
-          Value: true
-        rplidar_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -98,19 +88,11 @@ Visualization Manager:
             base_link:
               base_link_frd:
                 {}
-              base_link_inertia:
-                {}
               imu_link:
                 {}
-              rotor_0:
+              laser_bottom_link:
                 {}
-              rotor_1:
-                {}
-              rotor_2:
-                {}
-              rotor_3:
-                {}
-              rplidar_link:
+              laser_top_link:
                 {}
             odom_ned:
               {}
@@ -121,10 +103,6 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        /imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
@@ -134,32 +112,16 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        base_link_inertia:
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_bottom_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rotor_0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rotor_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rotor_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rotor_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rplidar_link:
+        laser_top_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -170,68 +132,8 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 7.626500129699707
-        Min Value: 5.666669845581055
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 20; 220; 20
-      Color Transformer: FlatColor
-      Decay Time: 0.10000000149011612
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: PointCloud2
-      Position Transformer: XYZ
-      Queue Size: 200
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.029999999329447746
-      Style: Flat Squares
-      Topic: /horizontal_laser_3d
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 5.608699798583984
-        Min Value: 3.778749942779541
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 240; 220; 20
-      Color Transformer: FlatColor
-      Decay Time: 0.10000000149011612
-      Enabled: false
-      Invert Rainbow: true
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: PointCloud2
-      Position Transformer: XYZ
-      Queue Size: 200
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.029999999329447746
-      Style: Flat Squares
-      Topic: /vertical_laser_3d
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
     - Class: Submaps
-      Enabled: true
+      Enabled: false
       Fade-out distance: 1
       High Resolution: true
       Low Resolution: false
@@ -239,13 +141,10 @@ Visualization Manager:
       Submap query service: /submap_query
       Submaps:
         All: true
-        Trajectory 0:
-          0.19: true
-          Value: true
       Topic: /submap_list
       Tracking frame: base_link
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -301,6 +200,36 @@ Visualization Manager:
         Intra residuals: true
       Queue Size: 100
       Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic: /points2_1
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 100; 100; 100
@@ -329,22 +258,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 5.996953964233398
+      Distance: 6.716588497161865
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.2951045036315918
-        Y: 0.7710652351379395
+        X: 0.9347718358039856
+        Y: 2.381016254425049
         Z: -1.430511474609375e-6
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5703981518745422
+      Pitch: 0.4553981125354767
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
       Yaw: 1.2985821962356567
