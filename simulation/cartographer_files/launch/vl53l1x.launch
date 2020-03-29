@@ -29,11 +29,13 @@
 
   <!-- Relay imu data from mavros topic to /imu that cartographer expects -->
   <node pkg="topic_tools" type="relay" name="imu_relay" args="mavros/imu/data imu" />
+  <node pkg="topic_tools" type="relay" name="scan_top_relay" args="laser/top/scan scan_1" />
+  <node pkg="topic_tools" type="relay" name="scan_bottom_relay" args="laser/bottom/scan scan_2" />
 
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_ros)/configuration_files
-          -configuration_basename vl53l1x_3d.lua"
+          -configuration_basename vl53l1x_complete.lua"
       output="screen">
   </node>
 

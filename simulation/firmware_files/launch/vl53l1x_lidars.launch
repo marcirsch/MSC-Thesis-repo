@@ -4,12 +4,14 @@
     <arg name="vehicle" default="iris_vl53l1x"/>
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/slam_building.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/>
+    <arg name="Y" default="3.14"/>
     
     <!-- Load arguments to launch file -->
     <include file="$(find px4)/launch/mavros_posix_sitl.launch">
         <arg name="world" value="$(arg world)"/>
         <arg name="vehicle" value="$(arg vehicle)"/>
         <arg name="sdf" value="$(arg sdf)"/>
+        <arg name="Y" default="$(arg Y)"/>
     </include>
 
     <!-- Todo: Load urdf used for cartographer and start state publishers -->
