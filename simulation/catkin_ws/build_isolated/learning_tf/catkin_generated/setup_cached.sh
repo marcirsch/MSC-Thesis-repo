@@ -7,8 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf/lib/pkgconfig:$PKG_CONFIG_PATH"
+export CMAKE_PREFIX_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated:/opt/ros/melodic:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install"
+export LD_LIBRARY_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib:/opt/ros/melodic/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib"
+export PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/bin:/opt/ros/melodic/bin:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/bin:/home/rschmarci/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PKG_CONFIG_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib/pkgconfig"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/learning_tf/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/learning_tf:$ROS_PACKAGE_PATH"

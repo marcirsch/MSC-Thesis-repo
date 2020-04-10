@@ -1691,3 +1691,45 @@ Source file was:
                                  std::shared_ptr<int> int_ptr;
                                  return 0;
                                }
+Determining if the include file unordered_map exists passed with the following output:
+Change Dir: /home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_1a719"
+[1/2] Building CXX object CMakeFiles/cmTC_1a719.dir/CheckIncludeFile.cxx.o
+[2/2] Linking CXX executable cmTC_1a719
+
+
+Performing C++ SOURCE FILE Test HAVE_UNORDERED_MAP_IN_STD_NAMESPACE succeeded with the following output:
+Change Dir: /home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_a2913"
+[1/2] Building CXX object CMakeFiles/cmTC_a2913.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_a2913
+
+Source file was:
+#include <unordered_map>
+                               int main() {
+                                 std::unordered_map<int, int> map;
+                                 return 0;
+                               }
+Determining if the include file memory exists passed with the following output:
+Change Dir: /home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_6e491"
+[1/2] Building CXX object CMakeFiles/cmTC_6e491.dir/CheckIncludeFile.cxx.o
+[2/2] Linking CXX executable cmTC_6e491
+
+
+Performing C++ SOURCE FILE Test HAVE_SHARED_PTR_IN_STD_NAMESPACE succeeded with the following output:
+Change Dir: /home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_a38bb"
+[1/2] Building CXX object CMakeFiles/cmTC_a38bb.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_a38bb
+
+Source file was:
+#include <memory>
+                               int main() {
+                                 std::shared_ptr<int> int_ptr;
+                                 return 0;
+                               }

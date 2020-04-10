@@ -1,0 +1,8 @@
+prefix=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated
+
+Name: tf_tools
+Description: Description of tf_tools
+Version: 0.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

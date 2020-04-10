@@ -1,2 +1,2 @@
-cartographer:cartographer_ros/cartographer_ros:cartographer_ros/cartographer_ros_msgs:cartographer_ros/cartographer_rviz:ceres-solver:learning_tf:slam_gazebo
+cartographer:cartographer_ros/cartographer_ros:cartographer_ros/cartographer_ros_msgs:cartographer_ros/cartographer_rviz:ceres-solver:learning_tf:slam_gazebo:srv_tools/bag_tools:srv_tools/launch_tools:srv_tools/plot_tools:srv_tools/pointcloud_tools:srv_tools/srv_tools:srv_tools/tf_tools
 -G Ninja -DCATKIN_DEVEL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated

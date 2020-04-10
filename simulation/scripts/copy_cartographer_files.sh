@@ -10,3 +10,6 @@ cp -avr $CARTOGRAPHER_FILE_FOLDER/configuration_files/* $CARTO_FOLDER/configurat
 
 echo "Copying launch files"
 cp -avr $CARTOGRAPHER_FILE_FOLDER/launch/* $CARTO_FOLDER/launch
+
+echo "Copying urdf files"
+cp -avr $CARTOGRAPHER_FILE_FOLDER/urdf/* $CARTO_FOLDER/urdf

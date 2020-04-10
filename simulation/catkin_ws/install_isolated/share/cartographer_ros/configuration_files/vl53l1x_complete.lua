@@ -25,7 +25,7 @@ options = {
   provide_odom_frame = true,
   publish_frame_projected_to_2d = false,
   use_odometry = false,
-  use_nav_sat = false,
+  use_nav_sat = false,  
   use_landmarks = false,
   num_laser_scans = 0,
   num_multi_echo_laser_scans = 0,
@@ -41,20 +41,33 @@ options = {
   imu_sampling_ratio = 1.,
   landmarks_sampling_ratio = 1.,
 }
+MAX_RANGE = 3.7
 
-TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 2
-TRAJECTORY_BUILDER_3D.min_range = 0.2
-TRAJECTORY_BUILDER_3D.max_range = 3.99
+
+TRAJECTORY_BUILDER_3D.min_range = 0.25
+TRAJECTORY_BUILDER_3D.max_range = MAX_RANGE
+TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 2.
+-- TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.3
+TRAJECTORY_BUILDER_3D.imu_gravity_time_constant = 0.5
+
+
+TRAJECTORY_BUILDER_3D.submaps.num_range_data = 100
+TRAJECTORY_BUILDER_3D.submaps.low_resolution = 0.3
+
+TRAJECTORY_BUILDER_3D.motion_filter.max_time_seconds=0.1
+
 
 MAP_BUILDER.use_trajectory_builder_3d = true
 MAP_BUILDER.num_background_threads = 7
 
-
 POSE_GRAPH.optimization_problem.huber_scale = 5e2
-POSE_GRAPH.optimize_every_n_nodes = 320
+POSE_GRAPH.optimize_every_n_nodes = 0
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
 POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
 POSE_GRAPH.constraint_builder.min_score = 0.62
 POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
+POSE_GRAPH.constraint_builder.log_matches = true
+
+
 
 return options

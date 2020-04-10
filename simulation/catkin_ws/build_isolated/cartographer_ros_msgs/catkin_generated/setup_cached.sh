@@ -7,10 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated:/opt/ros/melodic:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install"
-export LD_LIBRARY_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib:/opt/ros/melodic/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib"
-export PKG_CONFIG_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib/pkgconfig"
-export PWD="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/build_isolated/cartographer_ros_msgs"
+export CMAKE_PREFIX_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install:/opt/ros/melodic"
+export LD_LIBRARY_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib:/opt/ros/melodic/lib"
+export PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/bin:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/bin:/opt/ros/melodic/bin:/home/rschmarci/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PKG_CONFIG_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib/pkgconfig:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig"
 export PYTHONPATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/devel_isolated/cartographer_ros_msgs/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer_ros/cartographer_ros_msgs:/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/share:/opt/ros/melodic/share"
+export ROS_PACKAGE_PATH="/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/src/cartographer_ros/cartographer_ros_msgs:$ROS_PACKAGE_PATH"
