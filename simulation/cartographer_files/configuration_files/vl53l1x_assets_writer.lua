@@ -9,7 +9,7 @@ options = {
     {
       action = "min_max_range_filter",
       min_range = 0.2,
-      max_range = 3.8,
+      max_range = 3.7,
     },
     {
       action = "dump_num_points",
@@ -77,8 +77,8 @@ options = {
     -- The points in the PLY can be visualized using
     -- https://github.com/googlecartographer/point_cloud_viewer.
     {
-      action = "write_ply",
-      filename = "points.ply",
+      action = "write_xyz",
+      filename = "points.xyz",
     },
     {
       action = "write_probability_grid",

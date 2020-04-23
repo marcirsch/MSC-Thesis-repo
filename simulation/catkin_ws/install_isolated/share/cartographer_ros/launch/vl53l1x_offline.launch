@@ -27,7 +27,7 @@
           -urdf_filenames $(find cartographer_ros)/urdf/iris_vl53l1x_lidars.urdf
           -bag_filenames $(arg bag_filenames)"
       output="screen">
-    <remap from="imu" to="mavros/imu/data_raw" />
+    <remap from="imu" to="mavros/imu/data" />
   </node>
 
 
@@ -36,6 +36,6 @@
 
 
   <!-- Node to filter and convert vl53l1x measurements from pcl to pcl2 -->
-  <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/> 
+  <!-- <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/>  -->
   
 </launch>

@@ -88,16 +88,12 @@ Visualization Manager:
             {}
           odom:
             base_link:
-              base_link_frd:
-                {}
               imu_link:
                 {}
               laser_bottom_link:
                 {}
               laser_top_link:
                 {}
-            odom_ned:
-              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -197,46 +193,59 @@ Visualization Manager:
     - Class: Submaps
       Enabled: true
       Fade-out distance: 1
-      High Resolution: true
-      Low Resolution: false
+      High Resolution: false
+      Low Resolution: true
       Name: Submaps
       Submap query service: /submap_query
       Submaps:
         All: true
         Trajectory 0:
-          0.200: true
-          1.200: true
-          10.200: true
-          11.200: true
-          12.200: true
-          13.200: true
-          14.200: true
-          15.200: true
-          16.200: true
-          17.200: true
-          18.200: true
-          19.200: true
-          2.200: true
-          20.200: true
-          21.200: true
-          22.200: true
-          23.200: true
-          24.200: true
-          25.200: true
-          26.200: true
-          27.200: true
-          28.200: true
-          29.200: true
-          3.200: true
-          30.200: true
-          31.159: true
-          32.59: true
-          4.200: true
-          5.200: true
-          6.200: true
-          7.200: true
-          8.200: true
-          9.200: true
+          0.320: true
+          1.320: true
+          10.320: true
+          11.320: true
+          12.320: true
+          13.320: true
+          14.320: true
+          15.320: true
+          16.320: true
+          17.320: true
+          18.320: true
+          19.320: true
+          2.320: true
+          20.320: true
+          21.320: true
+          22.320: true
+          23.320: true
+          24.320: true
+          25.320: true
+          26.320: true
+          27.320: true
+          28.320: true
+          29.320: true
+          3.320: true
+          30.320: true
+          31.320: true
+          32.320: true
+          33.320: true
+          34.320: true
+          35.320: true
+          36.320: true
+          37.320: true
+          38.320: true
+          39.320: true
+          4.320: true
+          40.320: true
+          41.320: true
+          42.320: true
+          43.320: true
+          44.301: true
+          45.141: true
+          5.320: true
+          6.320: true
+          7.320: true
+          8.320: true
+          9.320: true
           Value: true
       Topic: /submap_list
       Tracking frame: map
@@ -334,15 +343,15 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 12.669012069702148
+      Distance: 22.32712745666504
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.784843921661377
-        Y: -0.7297360897064209
+        X: 3.9883365631103516
+        Y: 7.471905708312988
         Z: -1.3278781807457563e-6
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
@@ -352,7 +361,7 @@ Visualization Manager:
       Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 3.8835599422454834
+      Yaw: 1.5935527086257935
     Saved: ~
 Window Geometry:
   "&Displays":

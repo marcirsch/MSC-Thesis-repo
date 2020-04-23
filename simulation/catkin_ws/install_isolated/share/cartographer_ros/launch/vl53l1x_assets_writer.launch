@@ -11,5 +11,5 @@
       output="screen">
     <remap from="imu" to="mavros/imu/data_raw" />
   </node>
-  <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/> 
+  <!-- <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/>  -->
 </launch>

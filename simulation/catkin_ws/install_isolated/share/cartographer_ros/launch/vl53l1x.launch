@@ -45,5 +45,5 @@
       args="-d $(find cartographer_ros)/configuration_files/demo_3d.rviz" />
   
   <!-- Node to filter and convert vl53l1x measurements from pcl to pcl2 -->
-  <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/> 
+  <!-- <node pkg="slam_gazebo" name="pcl_to_pcl2" type="pclToPcl2.py"/>  -->
 </launch>

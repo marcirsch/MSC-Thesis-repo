@@ -43,30 +43,43 @@ options = {
 }
 MAX_RANGE = 3.7
 
-
+-- --------------------LOCAL SLAM--------------------
+-- Must have
 TRAJECTORY_BUILDER_3D.min_range = 0.25
 TRAJECTORY_BUILDER_3D.max_range = MAX_RANGE
 TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 2.
--- TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.3
 TRAJECTORY_BUILDER_3D.imu_gravity_time_constant = 0.5
-
-
-TRAJECTORY_BUILDER_3D.submaps.num_range_data = 100
-TRAJECTORY_BUILDER_3D.submaps.low_resolution = 0.3
-
 TRAJECTORY_BUILDER_3D.motion_filter.max_time_seconds=0.1
+-- The rest is optional
 
+-- TRAJECTORY_BUILDER_3D.submaps.num_range_data = 100
+-- Low resolution submap of 0.25 seemingly makes matching faster and nicer
+TRAJECTORY_BUILDER_3D.submaps.low_resolution = 0.25
+TRAJECTORY_BUILDER_3D.ceres_scan_matcher.translation_weight = 5.
+-- Provides a much better local slam performance value:15
+TRAJECTORY_BUILDER_3D.ceres_scan_matcher.rotation_weight = 15.
+-- High resolution weight
+-- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_0 = 1.
+-- Low resolution weight
+-- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_1 = 50
+-- --------------------GLOBAL SLAM--------------------
 
 MAP_BUILDER.use_trajectory_builder_3d = true
 MAP_BUILDER.num_background_threads = 7
 
-POSE_GRAPH.optimization_problem.huber_scale = 5e2
-POSE_GRAPH.optimize_every_n_nodes = 0
-POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
-POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
-POSE_GRAPH.constraint_builder.min_score = 0.62
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
-POSE_GRAPH.constraint_builder.log_matches = true
+
+POSE_GRAPH.optimize_every_n_nodes = 90
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 0.5
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher_3d.linear_xy_search_window = 0.5
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher_3d.angular_search_window = math.rad(15.)
+
+
+-- POSE_GRAPH.optimization_problem.huber_scale = 5e2
+-- POSE_GRAPH.constraint_builder.sampling_ratio = 0.03
+-- POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 10
+-- POSE_GRAPH.constraint_builder.min_score = 0.62
+-- POSE_GRAPH.constraint_builder.global_localization_min_score = 0.66
+-- POSE_GRAPH.constraint_builder.log_matches = true
 
 
 

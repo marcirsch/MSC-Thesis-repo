@@ -19,6 +19,18 @@
                 "enable_logging:=false",
                 "rotors_description_dir:=/home/rschmarci/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description"
             ]
+        },
+        {
+            "name": "Python: addPointCloudToBag.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulation/scripts/addPointCloudToBag.py",
+            "console": "integratedTerminal",
+            "args": [
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/2020-04-14-16-35-02.bag",
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/output.bag"
+                
+            ]
         }
     ]
 }
