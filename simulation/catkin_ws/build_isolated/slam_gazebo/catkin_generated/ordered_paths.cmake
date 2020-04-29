@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/opt/ros/melodic/lib")
+set(ORDERED_PATHS "/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated/lib;/opt/ros/melodic/lib")

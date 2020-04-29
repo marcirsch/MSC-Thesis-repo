@@ -21,7 +21,7 @@
     textfile="$(find cartographer_ros)/urdf/iris_vl53l1x_lidars.urdf" />
   <!-- Published states from robot descriptor -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-        <param name="publish_frequency" type="double" value="100.0" />
+        <param name="publish_frequency" type="double" value="50.0" />
   </node>
   <!-- Publishes joint states based on the robot descriptor -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 

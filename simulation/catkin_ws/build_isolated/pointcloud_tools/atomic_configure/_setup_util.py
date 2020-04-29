@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = '/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated;/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install;/opt/ros/melodic'.split(';')
+            CMAKE_PREFIX_PATH = '/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated;/opt/ros/melodic;/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/protobuf/install'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

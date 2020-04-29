@@ -52,13 +52,24 @@
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>tf</build_depend>
+  <build_depend>protobuf-dev</build_depend>
+  <build_depend>cartographer_ros</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>tf</build_export_depend>
+  <build_export_depend>cartographer_ros</build_export_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>tf</exec_depend>
+  <exec_depend>cartographer_ros</exec_depend>
 
+
+  <depend>libgoogle-glog-dev</depend>
+  <depend>libpcl-all-dev</depend>
+
+
+  find_package(catkin REQUIRED
+    COMPONENTS roscpp cartographer_ros)
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

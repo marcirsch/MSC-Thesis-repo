@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Python: xacro.py File",
             "type": "python",
@@ -21,14 +22,26 @@
             ]
         },
         {
-            "name": "Python: addPointCloudToBag.py",
+            "name": "Python: PointCloudFilter.py",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/simulation/scripts/addPointCloudToBag.py",
+            "program": "${workspaceFolder}/simulation/scripts/PointCloudFilter.py",
             "console": "integratedTerminal",
             "args": [
-                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/2020-04-14-16-35-02.bag",
-                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/output.bag"
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/BasicBuildingPCL2_500s.bag",
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/debug.bag"
+                
+            ]
+        },
+        {
+            "name": "Python: GazeboPoseWriter.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulation/scripts/GazeboPoseWriter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "/home/rschmarci/MSC-Thesis-repo/measurements/basic_full_Lfull_Dfull_TSfull/basic_full_Lfull_Dfull_TSfull.bag",
+                "/home/rschmarci/MSC-Thesis-repo/measurements/basic_full_Lfull_Dfull_TSfull/outputGroundTruth.csv"
                 
             ]
         }

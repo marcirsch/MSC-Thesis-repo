@@ -43,19 +43,39 @@ options = {
 }
 MAX_RANGE = 3.7
 
-MAP_BUILDER.use_trajectory_builder_2d = true
-TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 2
+-- --------------------LOCAL SLAM--------------------
 TRAJECTORY_BUILDER_2D.min_range = 0.3
 TRAJECTORY_BUILDER_2D.max_range = MAX_RANGE
--- TRAJECTORY_BUILDER_2D.voxel_filter_size = 0.05
-TRAJECTORY_BUILDER_2D.min_z = -0.
-
-
-TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds = 0.01
+TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 2
+TRAJECTORY_BUILDER_2D.use_imu_data = true
 TRAJECTORY_BUILDER_2D.imu_gravity_time_constant = 0.5
-POSE_GRAPH.optimize_every_n_nodes = 120
+TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds=0.03
 
-TRAJECTORY_BUILDER_2D.submaps.num_range_data = 60
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 15.
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 15.
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 160
+
+
+-- --------------------GLOBAL SLAM--------------------
+
+MAP_BUILDER.use_trajectory_builder_2d = true
+MAP_BUILDER.num_background_threads = 7
+
+POSE_GRAPH.optimize_every_n_nodes = 90
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 0.25
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(15.)
+
+
+-- TRAJECTORY_BUILDER_2D.voxel_filter_size = 0.05
+-- TRAJECTORY_BUILDER_2D.min_z = -0.
+
+
+-- TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds = 0.01
+-- TRAJECTORY_BUILDER_2D.imu_gravity_time_constant = 0.5
+-- POSE_GRAPH.optimize_every_n_nodes = 120
+
+-- TRAJECTORY_BUILDER_2D.submaps.num_range_data = 60
+
 
 -- TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 -- TRAJECTORY_BUILDER_2D.use_imu_data = true
