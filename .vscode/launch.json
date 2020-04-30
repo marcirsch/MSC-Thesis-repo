@@ -28,7 +28,7 @@
             "program": "${workspaceFolder}/simulation/scripts/PointCloudFilter.py",
             "console": "integratedTerminal",
             "args": [
-                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/BasicBuildingPCL2_500s.bag",
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/MaxedLidars.bag",
                 "/home/rschmarci/MSC-Thesis-repo/simulation/bags/debug.bag"
                 
             ]

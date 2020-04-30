@@ -16,8 +16,8 @@ inBagPath = str(sys.argv[1])
 outBagPath = str(sys.argv[2])
 
 # Set lidar config to be used here
-lidar_claster = LidarConfiguration.lidar_full
-lidar_max_distance = 0.0
+lidar_claster = LidarConfiguration.lidar_losless
+lidar_max_distance = 4.0
 lidar_sampling_time = 0.0
 
 topic_list = [
@@ -35,25 +35,35 @@ class PointCloudFilter:
         noFilter=1
         average=2
 
-    def __init__(self,claster_thresholds, Ts, max_distance):
-        self.clasters = claster_thresholds
+    def __init__(self, clasters, Ts, max_distance):
+        self.clasters = clasters
         self.Ts = Ts
         self.max_distance = max_distance
 
         self.timeOfLastMessage = 0
 
-    def _getAngles(self, point):
+    def _getAngles(self, point1, point2):
+        # u*v=ux*vx+uy*vy+uz*vz
+        pointsProduct = point1[0] * point2[0] + point1[1] * point2[1] + point1[2] * point2[2]
+        # |u|
+        mag1 = math.sqrt(point1[0]*point1[0] + point1[1]*point1[1] + point1[2]*point1[2])
+        # |v|
+        mag2 = math.sqrt(point2[0]*point2[0] + point2[1]*point2[1] + point2[2]*point2[2])
+        # alpha = cos^-1 (u*v / |u|*|v|)
+        cosInternal = pointsProduct/(mag1*mag2)
+        alpha = math.acos(cosInternal)
+        return math.degrees(alpha)
+
+    def _getVectorAngles(self, point):
         horizontal_angle = math.degrees(math.atan2(point[1], point[0]))
         vertical_angle = math.degrees(math.atan2(point[2], math.sqrt(point[0]*point[0] + point[1]*point[1])))
         return horizontal_angle, vertical_angle
     
     def _claster_point(self, point):
-        horizontal_angle, vertical_angle = self._getAngles(point)
-        # print("alfa: " + str(horizontal_angle) + " beta: " + str(vertical_angle))
+        
         for index in range(len(self.clasters)):
             claster = self.clasters[index]
-            if (horizontal_angle >= claster[0] and horizontal_angle <= claster[1] and vertical_angle >= claster[2] and vertical_angle <= claster[3]):
-                # In angle interval, return index
+            if self._getAngles(claster.vector, point) <= claster.alpha:
                 return index
         return -1
 
@@ -96,9 +106,9 @@ class PointCloudFilter:
         points_maximized = []
         for point in points:
             if self._get_distance(point) > max_distance:
-                horizontal_angle, vertical_angle = self._getAngles(point)
-                x_new = math.cos(math.radians(horizontal_angle)) * max_distance
-                y_new = math.sin(math.radians(horizontal_angle)) * max_distance
+                horizontal_angle, vertical_angle = self._getVectorAngles(point)
+                x_new = math.cos(math.radians(vertical_angle)) * math.cos(math.radians(horizontal_angle)) * max_distance
+                y_new = math.cos(math.radians(vertical_angle)) * math.sin(math.radians(horizontal_angle)) * max_distance
                 z_new = math.sin(math.radians(vertical_angle)) * max_distance
                 point = [x_new, y_new, z_new]
             points_maximized.append(point)
