@@ -39,7 +39,6 @@ lidar_even_full = [
     claster(-80,30,15), # 30 deg up
     claster(-120,30,15), # 30 deg up
     claster(-160,30,15), # 30 deg up
-
     # Third circle
     claster(0,0,15), 
     claster(30,0,15), # 0 deg up
@@ -53,7 +52,6 @@ lidar_even_full = [
     claster(270,0,15), # 0 deg up
     claster(300,0,15), # 0 deg up
     claster(330,0,15), # 0 deg up
-
     # Forth circle
     claster(0,-30,15), 
     claster(40,-30,15), # 30 deg down
