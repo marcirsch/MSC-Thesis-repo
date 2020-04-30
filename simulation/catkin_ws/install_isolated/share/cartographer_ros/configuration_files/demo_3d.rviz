@@ -197,13 +197,11 @@ Visualization Manager:
           2.320: true
           3.320: true
           4.320: true
-          5.320: true
-          6.320: true
-          7.169: true
-          8.9: true
+          5.299: true
+          6.139: true
           Value: true
       Topic: /submap_list
-      Tracking frame: base_link
+      Tracking frame: map
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -253,16 +251,13 @@ Visualization Manager:
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /constraint_list
       Name: Constraints
       Namespaces:
-        Inter constraints, same trajectory: true
-        Inter residuals, same trajectory: true
-        Intra constraints: true
-        Intra residuals: true
+        {}
       Queue Size: 100
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 100; 100; 100
@@ -290,7 +285,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
+      Angle: -0.8799997568130493
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -300,11 +295,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 54.73566436767578
+      Scale: 94.304443359375
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 0
-      Y: 0
+      X: 6.9849748611450195
+      Y: -4.307593822479248
     Saved: ~
 Window Geometry:
   "&Displays":
