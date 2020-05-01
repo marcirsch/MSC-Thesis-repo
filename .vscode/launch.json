@@ -44,6 +44,18 @@
                 "/home/rschmarci/MSC-Thesis-repo/measurements/basic_full_Lfull_Dfull_TSfull/outputGroundTruth.csv"
                 
             ]
+        },
+        {
+            "name": "Python: MavrosPoseWriter.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulation/scripts/MavrosPoseWriter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "/home/rschmarci/MSC-Thesis-repo/simulation/bags/measurements/TwoStorey_21-57losless_Lfull_D4_TSfull.bag",
+                "/home/rschmarci/MSC-Thesis-repo/measurements/01_TwoStorey_losless_2D_4m/mavrosGroundTruth.csv"
+                
+            ]
         }
     ]
 }
