@@ -16,7 +16,7 @@ inBagPath = str(sys.argv[1])
 outBagPath = str(sys.argv[2])
 
 # Set lidar config to be used here
-lidar_claster = LidarConfiguration.lidar_losless
+lidar_claster = LidarConfiguration.lidar_even_full
 lidar_max_distance = 4.0
 lidar_sampling_time = 0.0
 

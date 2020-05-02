@@ -8,18 +8,18 @@ options = {
   pipeline = {
     {
       action = "min_max_range_filter",
-      min_range = 0.2,
+      min_range = 0.4,
       max_range = 3.7,
     },
     {
       action = "dump_num_points",
     },
 
-    --  -- Remove moving objects
-    --  {
-    --     action = "voxel_filter_and_remove_moving_objects",
-    --     voxel_size = VOXEL_SIZE,
-    --   },
+     -- Remove moving objects
+     {
+        action = "voxel_filter_and_remove_moving_objects",
+        voxel_size = VOXEL_SIZE,
+      },
 
     -- Gray X-Rays. These only use geometry to color pixels.
     {
@@ -77,8 +77,8 @@ options = {
     -- The points in the PLY can be visualized using
     -- https://github.com/googlecartographer/point_cloud_viewer.
     {
-      action = "write_xyz",
-      filename = "points.xyz",
+      action = "write_ply",
+      filename = "points.ply",
     },
     {
       action = "write_probability_grid",

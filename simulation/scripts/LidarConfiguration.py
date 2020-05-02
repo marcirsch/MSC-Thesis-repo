@@ -22,56 +22,57 @@ lidar_losless = [
 # Divide whole range into clasters evenly distributed
 lidar_even_full = [
     # Top
-    claster(0,90,15), # 90 deg up
+    claster(0,90,13.5), # 90 deg up
     # First circle
-    claster(0,60,15), 
-    claster(72,60,15), # 60 deg up
-    claster(144,60,15), # 60 deg up
-    claster(-72,60,15), # 60 deg up
-    claster(-144,60,15), # 60 deg up
+    claster(0,60,13.5), 
+    claster(72,60,13.5), # 60 deg up
+    claster(144,60,13.5), # 60 deg up
+    claster(-72,60,13.5), # 60 deg up
+    claster(-144,60,13.5), # 60 deg up
     # Second circle
-    claster(0,30,15), 
-    claster(40,30,15), # 30 deg up
-    claster(80,30,15), # 30 deg up
-    claster(120,30,15), # 30 deg up
-    claster(160,30,15), # 30 deg up
-    claster(-40,30,15), # 30 deg up
-    claster(-80,30,15), # 30 deg up
-    claster(-120,30,15), # 30 deg up
-    claster(-160,30,15), # 30 deg up
+    claster(0,30,13.5), 
+    claster(40,30,13.5), # 30 deg up
+    claster(80,30,13.5), # 30 deg up
+    claster(120,30,13.5), # 30 deg up
+    claster(160,30,13.5), # 30 deg up
+    claster(-40,30,13.5), # 30 deg up
+    claster(-80,30,13.5), # 30 deg up
+    claster(-120,30,13.5), # 30 deg up
+    claster(-160,30,13.5), # 30 deg up
     # Third circle
-    claster(0,0,15), 
-    claster(30,0,15), # 0 deg up
-    claster(60,0,15), # 0 deg up
-    claster(90,0,15), # 0 deg up
-    claster(120,0,15), # 0 deg up
-    claster(150,0,15), # 0 deg up
-    claster(180,0,15), # 0 deg up
-    claster(210,0,15), # 0 deg up
-    claster(240,0,15), # 0 deg up
-    claster(270,0,15), # 0 deg up
-    claster(300,0,15), # 0 deg up
-    claster(330,0,15), # 0 deg up
+    claster(0,0,13.5), 
+    claster(1*27.69,0,13.5), # 0 deg up
+    claster(2*27.69,0,13.5), # 0 deg up
+    claster(3*27.69,0,13.5), # 0 deg up
+    claster(4*27.69,0,13.5), # 0 deg up
+    claster(5*27.69,0,13.5), # 0 deg up
+    claster(6*27.69,0,13.5), # 0 deg up
+    claster(7*27.69,0,13.5), # 0 deg up
+    claster(8*27.69,0,13.5), # 0 deg up
+    claster(9*27.69,0,13.5), # 0 deg up
+    claster(10*27.69,0,13.5), # 0 deg up
+    claster(11*27.69,0,13.5), # 0 deg up
+    claster(12*27.69,0,13.5), # 0 deg up
     # Forth circle
-    claster(0,-30,15), 
-    claster(40,-30,15), # 30 deg down
-    claster(80,-30,15), # 30 deg down
-    claster(120,-30,15), # 30 deg down
-    claster(160,-30,15), # 30 deg down
-    claster(-40,-30,15), # 30 deg down
-    claster(-80,-30,15), # 30 deg down
-    claster(-120,-30,15), # 30 deg down
-    claster(-160,-30,15), # 30 deg down
+    claster(0,-30,13), 
+    claster(40,-30,13), # 30 deg down
+    claster(80,-30,13), # 30 deg down
+    claster(120,-30,13), # 30 deg down
+    claster(160,-30,13), # 30 deg down
+    claster(-40,-30,13), # 30 deg down
+    claster(-80,-30,13), # 30 deg down
+    claster(-120,-30,13), # 30 deg down
+    claster(-160,-30,13), # 30 deg down
 
-    # First circle
-    claster(0,-60,15), 
-    claster(72,-60,15), # 60 deg up
-    claster(144,-60,15), # 60 deg up
-    claster(-72,-60,15), # 60 deg up
-    claster(-144,-60,15), # 60 deg up
+    # Fifth circle
+    claster(0,-60,13), 
+    claster(72,-60,13), # 60 deg up
+    claster(144,-60,13), # 60 deg up
+    claster(-72,-60,13), # 60 deg up
+    claster(-144,-60,13), # 60 deg up
 
     # Bottom
-    claster(0,-90,15), # 90 deg up
+    claster(0,-90,13), # 90 deg up
 ]
 
 def get_lidar_every_30_degrees():
