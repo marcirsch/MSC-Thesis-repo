@@ -44,17 +44,18 @@ options = {
 MAX_RANGE = 3.7
 
 -- --------------------LOCAL SLAM--------------------
-TRAJECTORY_BUILDER_2D.min_range = 0.3
+TRAJECTORY_BUILDER_2D.min_range = 0.4
 TRAJECTORY_BUILDER_2D.max_range = MAX_RANGE
+TRAJECTORY_BUILDER_2D.min_z = -0.1
+TRAJECTORY_BUILDER_2D.max_z = 0.5
 TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 2
 TRAJECTORY_BUILDER_2D.use_imu_data = true
 TRAJECTORY_BUILDER_2D.imu_gravity_time_constant = 0.5
 TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds=0.03
 
-TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 15.
-TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 15.
-TRAJECTORY_BUILDER_2D.submaps.num_range_data = 160
-
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 5.
+TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 5.
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 90
 
 -- --------------------GLOBAL SLAM--------------------
 

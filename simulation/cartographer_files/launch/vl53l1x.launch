@@ -17,11 +17,13 @@
 <launch>
 
   <!-- Registers robot descriptor used for building tf tree -->
-   <param name="robot_description"
+  <param name="robot_description"
     textfile="$(find cartographer_ros)/urdf/iris_vl53l1x_lidars.urdf" />
+  <!-- Config file name input from command line -->
+  <arg name="config_file" default="default.lua"/>
   <!-- Published states from robot descriptor -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-        <param name="publish_frequency" type="double" value="50.0" />
+        <param name="publish_frequency" type="double" value="100.0" />
   </node>
   <!-- Publishes joint states based on the robot descriptor -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
@@ -33,7 +35,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_ros)/configuration_files
-          -configuration_basename vl53l1x_complete.lua"
+          -configuration_basename $(arg config_file)"
       output="screen">
     <remap from="imu" to="mavros/imu/data" />
   </node>
