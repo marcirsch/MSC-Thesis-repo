@@ -1,2 +1,4 @@
-simulation/catkin_ws/bagfiles/*
+simulation/catkin_ws/build_isolated/*
+simulation/catkin_ws/devel_isolated/*
+simulation/catkin_ws/install_isolated/*
 simulation/bags
