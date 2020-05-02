@@ -1,8 +1,0 @@
-prefix=/home/rschmarci/MSC-Thesis-repo/simulation/catkin_ws/install_isolated
-
-Name: pointcloud_tools
-Description: Description of pointcloud_tools
-Version: 0.0.3
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
