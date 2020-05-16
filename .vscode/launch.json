@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
         {
             "name": "Python: xacro.py File",
             "type": "python",
@@ -12,7 +18,8 @@
             "program": "${workspaceFolder}/simulation/Firmware/Tools/sitl_gazebo/scripts/xacro.py",
             "console": "integratedTerminal",
             "args": [
-                "-o", "/home/rschmarci/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description/urdf/iris_base.urdf",
+                "-o",
+                "/home/rschmarci/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description/urdf/iris_base.urdf",
                 "/home/rschmarci/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description/urdf/iris_base.xacro",
                 "enable_mavlink_interface:=true",
                 "enable_ground_truth:=false",
@@ -30,7 +37,6 @@
             "args": [
                 "/home/rschmarci/MSC-Thesis-repo/simulation/bags/MaxedLidars.bag",
                 "/home/rschmarci/MSC-Thesis-repo/simulation/bags/debug.bag"
-                
             ]
         },
         {
@@ -42,7 +48,6 @@
             "args": [
                 "/home/rschmarci/MSC-Thesis-repo/measurements/basic_full_Lfull_Dfull_TSfull/basic_full_Lfull_Dfull_TSfull.bag",
                 "/home/rschmarci/MSC-Thesis-repo/measurements/basic_full_Lfull_Dfull_TSfull/outputGroundTruth.csv"
-                
             ]
         },
         {
@@ -54,12 +59,21 @@
             "args": [
                 "/home/rschmarci/MSC-Thesis-repo/simulation/bags/measurements/TwoStorey_21-57losless_Lfull_D4_TSfull.bag",
                 "/home/rschmarci/MSC-Thesis-repo/measurements/01_TwoStorey_losless_2D_4m/mavrosGroundTruth.csv"
-                
+            ]
+        },
+        {
+            "name": "Python: TrajectoryListener.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulation/scripts/TrajectoryListener.py",
+            "console": "integratedTerminal",
+            "args": [
+                // "/home/rschmarci/MSC-Thesis-repo/simulation/bags/measurements/TwoStorey_21-57losless_Lfull_D4_TSfull.bag",
+                "/home/rschmarci/MSC-Thesis-repo/measurements/03_TwoStorey_evenAvg_2d_4m/debugGroundTruth.csv"
             ]
         }
     ]
 }
-
 // python ~/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/scripts/xacro.py 
 // -o ~/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description/urdf/iris_base.urdf
 //  ~/MSC-Thesis-repo/simulation/Firmware/Tools/sitl_gazebo/models/rotors_description/urdf/iris_base.xacro 

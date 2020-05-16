@@ -1,0 +1,1 @@
+State has no data about trajectory. Trajectory is written by using a script called TrajectoryListener 

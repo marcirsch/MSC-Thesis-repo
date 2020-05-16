@@ -16,9 +16,13 @@ inBagPath = str(sys.argv[1])
 outBagPath = str(sys.argv[2])
 
 # Set lidar config to be used here
-lidar_claster = LidarConfiguration.lidar_even_full
+# Even 3d
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-60,-30,0,30,60,90],[1,5,9,13,9,5,1], [0,0,0,0,0,0,0],4)
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 15, 90],[1,6,6,1], [0,0,30,0],4)
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 0, 15, 90],[1,4,4,4,1], [0,45,0,45,0],4)
+lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-30, 0, 30],[4,6,4], [45,0,45],4)
 lidar_max_distance = 4.0
-lidar_sampling_time = 0.0
+lidar_sampling_time = 0.39
 
 topic_list = [
     "/clock",
@@ -37,6 +41,7 @@ class PointCloudFilter:
 
     def __init__(self, clasters, Ts, max_distance):
         self.clasters = clasters
+        self.pclIndexes = None
         self.Ts = Ts
         self.max_distance = max_distance
 
@@ -69,23 +74,41 @@ class PointCloudFilter:
 
     # Get list of points from Pointcloud points field that went through filter
     def claster_points_from_pcl(self, pcl):
+        if self.pclIndexes == None:
+            self.pclIndexes = [[] for i in range(len(self.clasters))]
+            for pclIndex in range(len(pcl.points)):
+                point = pcl.points[pclIndex]
+                point_array = [point.x, point.y, point.z]
+                clasterIndex = self._claster_point(point_array)
+                if clasterIndex >= 0:
+                    self.pclIndexes[clasterIndex].append(pclIndex)
         # Create points list 
         clastered_points = [[] for i in range(len(self.clasters))]
 
-        for point in pcl.points:
-            point_array = [point.x, point.y, point.z]
-            index = self._claster_point(point_array)
-            if index >= 0:
-                clastered_points[index].append(point_array)
+        for clasterIndex in range(len(self.pclIndexes)):
+            for pclIndex in self.pclIndexes[clasterIndex]:
+                point = pcl.points[pclIndex]
+                clastered_points[clasterIndex].append([point.x, point.y, point.z])
         return clastered_points
+
+
+        # for point in pcl.points:
+        #     point_array = [point.x, point.y, point.z]
+        #     index = self._claster_point(point_array)
+        #     if index >= 0:
+        #         clastered_points[index].append(point_array)
+        # return clastered_points
 
     def average_clastered_points(self, clastered_points):
         # Calculate average for clasters
         points_avg = []
         for clastered_point in clastered_points:
+            if len(clastered_point) == 0:
+                continue
             # print(claster)
             # print(claster[:,0])
             claster_np = np.array(clastered_point)
+            
             x = np.average(claster_np[:,0])
             y = np.average(claster_np[:,1])
             z = np.average(claster_np[:,2])
@@ -159,11 +182,11 @@ if __name__ == "__main__":
                 startTime = t
                 
             if topic == "/laser/top/scan":
-                filtered_pcl2 = topFilter.filter_and_convert(msg, PointCloudFilter.FilterType.noFilter)
+                filtered_pcl2 = topFilter.filter_and_convert(msg, PointCloudFilter.FilterType.average)
                 if filtered_pcl2 != None:
                     outbag.write("points2_1", filtered_pcl2, t)
             elif topic == "/laser/bottom/scan":
-                filtered_pcl2 = bottomFilter.filter_and_convert(msg, PointCloudFilter.FilterType.noFilter)
+                filtered_pcl2 = bottomFilter.filter_and_convert(msg, PointCloudFilter.FilterType.average)
                 if filtered_pcl2 != None:
                     outbag.write("points2_2", filtered_pcl2, t)
             
