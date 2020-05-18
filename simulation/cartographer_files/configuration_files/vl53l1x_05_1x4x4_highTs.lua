@@ -73,7 +73,7 @@ TRAJECTORY_BUILDER_2D.motion_filter.max_time_seconds=0.03
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 8.
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 15
 -- TRAJECTORY_BUILDER_2D.ceres_scan_matcher.occupied_space_weight = 2
--- TRAJECTORY_BUILDER_2D.submaps.num_range_data = 90
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 160
 
 
 

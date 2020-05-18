@@ -48,6 +48,7 @@ TRAJECTORY_BUILDER_2D.min_range = 0.4
 TRAJECTORY_BUILDER_2D.max_range = MAX_RANGE
 TRAJECTORY_BUILDER_2D.min_z = -0.1
 TRAJECTORY_BUILDER_2D.max_z = 0.5
+TRAJECTORY_BUILDER_2D.missing_data_ray_length = 3.
 TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 2
 TRAJECTORY_BUILDER_2D.use_imu_data = true
 TRAJECTORY_BUILDER_2D.imu_gravity_time_constant = 0.5
