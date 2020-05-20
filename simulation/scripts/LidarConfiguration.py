@@ -144,11 +144,11 @@ def get_lidar_even_3d_4x4(elevation_angles, nums, offsets , division):
 
     return clasters
 
-def get_lidar_even_2d(num, division):
+def get_lidar_even_2d(num, division, offset = 0):
     clasters = []
     spaciing_angle = 360/num
     for i in range(num):
-        clasters.extend(get_divided_clasters(i*spaciing_angle, 0, 13.5, division))
+        clasters.extend(get_divided_clasters(i*spaciing_angle, offset, 13.5, division))
     return clasters
 
 def get_lidar_even_4x4_2d():

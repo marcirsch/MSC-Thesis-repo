@@ -17,14 +17,15 @@ outBagPath = str(sys.argv[2])
 
 # Set lidar config to be used here
 # Even 2d
-lidar_claster = LidarConfiguration.get_lidar_even_2d(13, 3)
+# lidar_claster = LidarConfiguration.get_lidar_even_2d(8, 3, 4.5)
 
 # Even 3d
-# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-60,-30,0,30,60,90],[1,5,9,13,9,5,1], [0,0,0,0,0,0,0],4)
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-60,-30,4.5,34.5,64.5,90],[1,5,9,13,9,5,1], [0,0,0,0,0,0,0], 3)
+lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-60,-30,4.5,34.5,64.5],[5,9,13,9,5], [0,0,0,0,0,0,0], 3)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 15, 90],[1,6,6,1], [0,0,30,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 0, 15, 90],[1,4,4,4,1], [0,45,0,45,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-30, 0, 30],[4,6,4], [45,0,45],4)
-lidar_max_distance = 4.0
+lidar_max_distance = 2.75
 lidar_sampling_time = 0.22
 
 topic_list = [
