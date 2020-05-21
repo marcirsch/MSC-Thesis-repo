@@ -21,7 +21,7 @@ outBagPath = str(sys.argv[2])
 
 # Even 3d
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-60,-30,4.5,34.5,64.5,90],[1,5,9,13,9,5,1], [0,0,0,0,0,0,0], 3)
-lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-60,-30,4.5,34.5,64.5],[5,9,13,9,5], [0,0,0,0,0,0,0], 3)
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-60,-30,4.5,34.5,64.5],[5,9,13,9,5], [0,0,0,0,0,0,0], 3)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 15, 90],[1,6,6,1], [0,0,30,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 0, 15, 90],[1,4,4,4,1], [0,45,0,45,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-30, 0, 30],[4,6,4], [45,0,45],4)
