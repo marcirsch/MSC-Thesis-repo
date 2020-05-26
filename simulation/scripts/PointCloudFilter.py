@@ -17,16 +17,17 @@ outBagPath = str(sys.argv[2])
 
 # Set lidar config to be used here
 # Even 2d
-# lidar_claster = LidarConfiguration.get_lidar_even_2d(8, 3, 4.5)
-
+# lidar_claster = LidarConfiguration.get_lidar_even_2d(9, 3, 4.5)
+lidar_claster = [LidarConfiguration.claster(0,0,180)]
 # Even 3d
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-60,-30,4.5,34.5,64.5,90],[1,5,9,13,9,5,1], [0,0,0,0,0,0,0], 3)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-60,-30,4.5,34.5,64.5],[5,9,13,9,5], [0,0,0,0,0,0,0], 3)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 15, 90],[1,6,6,1], [0,0,30,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-90,-15, 0, 15, 90],[1,4,4,4,1], [0,45,0,45,0],4)
 # lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-30, 0, 30],[4,6,4], [45,0,45],4)
-lidar_max_distance = 2.75
-lidar_sampling_time = 0.22
+# lidar_claster = LidarConfiguration.get_lidar_even_3d_4x4([-30, 0],[9,13], [0,0], 4)
+lidar_max_distance = 4.0
+lidar_sampling_time = 0
 
 topic_list = [
     "/clock",
@@ -186,11 +187,11 @@ if __name__ == "__main__":
                 startTime = t
                 
             if topic == "/laser/top/scan":
-                filtered_pcl2 = topFilter.filter_and_convert(msg, PointCloudFilter.FilterType.average)
+                filtered_pcl2 = topFilter.filter_and_convert(msg, PointCloudFilter.FilterType.noFilter)
                 if filtered_pcl2 != None:
                     outbag.write("points2_1", filtered_pcl2, t)
             elif topic == "/laser/bottom/scan":
-                filtered_pcl2 = bottomFilter.filter_and_convert(msg, PointCloudFilter.FilterType.average)
+                filtered_pcl2 = bottomFilter.filter_and_convert(msg, PointCloudFilter.FilterType.noFilter)
                 if filtered_pcl2 != None:
                     outbag.write("points2_2", filtered_pcl2, t)
             

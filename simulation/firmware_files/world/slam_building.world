@@ -14,7 +14,7 @@
       <!-- <uri>model://asphalt_plane</uri> -->
       <!-- <uri>model://turtlebot3_world</uri> -->
       <!-- <uri>model://lidar_basic_building</uri> -->
-      <uri>model://basic_building</uri>
+      <uri>model://basic_building2</uri>
       <pose> -4.5 0.1 0 0 0 0 </pose>
     </include>
 

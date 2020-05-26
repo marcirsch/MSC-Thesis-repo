@@ -54,19 +54,19 @@ TRAJECTORY_BUILDER_3D.motion_filter.max_time_seconds=0.03
 
 -- Low resolution submap of 0.25 seemingly makes matching faster and nicer
 TRAJECTORY_BUILDER_3D.voxel_filter_size = 0.05
--- TRAJECTORY_BUILDER_3D.submaps.low_resolution = 0.15
+TRAJECTORY_BUILDER_3D.submaps.low_resolution = 0.15
 TRAJECTORY_BUILDER_3D.submaps.high_resolution = 0.15
-TRAJECTORY_BUILDER_3D.ceres_scan_matcher.translation_weight = 2.
--- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.rotation_weight = 1
+TRAJECTORY_BUILDER_3D.ceres_scan_matcher.translation_weight = 2
+-- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.rotation_weight = 15
 -- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.only_optimize_yaw = true
 -- High resolution weight
-TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_0 = 15
+-- TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_0 = 1.5
 -- Low resolution weight
-TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_1 = 30.
+TRAJECTORY_BUILDER_3D.ceres_scan_matcher.occupied_space_weight_1 = 15.
 
-TRAJECTORY_BUILDER_3D.submaps.num_range_data = 40
+TRAJECTORY_BUILDER_3D.submaps.num_range_data = 25
 
-TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
+-- TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
 -- TRAJECTORY_BUILDER_3D.real_time_correlative_scan_matcher.
 
 -- --------------------GLOBAL SLAM--------------------
